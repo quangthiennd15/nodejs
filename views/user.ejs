@@ -1,0 +1,32 @@
+<%- include("_header") -%>
+
+<h1>Information User (<%= model.length %>)</h1>
+
+<div class="table-responsive-sm">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>STT</th>
+        <th>AccRootchain</th>
+        <th>PKRootchain</th>
+        <th>RPCRootchain</th>
+        <th>AddTokenRootchain</th>
+        <th class="d-print-none">
+          <a class="btn btn-sm btn-success" href="/spnet">Start supernet</a>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (const user of model) { %>
+      <tr>
+        <td><%= user.AccRootchain %></td>
+        <td><%= user.PKRootchain %></td>
+        <td><%= user.RPCRootchain %></td>
+        <td><%= user.AddTokenRootchain %></td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
+
+<%- include("_footer") -%>
